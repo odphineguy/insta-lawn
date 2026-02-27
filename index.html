@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insta Lawn Quote | Precision Landscaping Estimates for Phoenix Metro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1a3c34;
+            overflow-x: hidden;
+            background-color: #fdfefd;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Manrope', sans-serif;
+            font-weight: 800;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #e6f7f0 0%, #f5f3e7 50%, #e6f0f7 100%);
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at 20% 50%, rgba(106, 179, 149, 0.15) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(65, 154, 203, 0.1) 0%, transparent 50%);
+        }
+        .card-shadow {
+            box-shadow: 0 10px 40px -15px rgba(26, 60, 52, 0.12);
+        }
+        .card-shadow-hover:hover {
+            box-shadow: 0 20px 60px -15px rgba(26, 60, 52, 0.2);
+            transform: translateY(-8px);
+        }
+        .addon-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .proposal-badge {
+            background: linear-gradient(90deg, #2a7d5f, #4aa37c);
+        }
+        .feature-icon-bg {
+            background: linear-gradient(135deg, #2a7d5f, #3da175);
+        }
+        .nav-blur {
+            backdrop-filter: blur(12px);
+            background-color: rgba(253, 254, 253, 0.92);
+        }
+        .stat-number {
+            background: linear-gradient(90deg, #1a3c34, #2a7d5f);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .cta-gradient {
+            background: linear-gradient(95deg, #1a5d46, #2a7d5f, #3da175);
+        }
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(42, 125, 95, 0.5); }
+            70% { box-shadow: 0 0 0 15px rgba(42, 125, 95, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(42, 125, 95, 0); }
+        }
+        @keyframes heroFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-12px); }
+        }
+        .hero-quote-float {
+            animation: heroFloat 6s ease-in-out infinite;
+        }
+        .hero-quote-float:hover {
+            animation-play-state: paused;
+        }
+        .slide-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .slide-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .tab-active {
+            border-bottom: 3px solid #2a7d5f;
+            color: #1a3c34;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Navigation -->
+    <header class="sticky top-0 z-50 nav-blur border-b border-gray-100">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 rounded-lg feature-icon-bg flex items-center justify-center">
+                        <i class="fas fa-leaf text-white text-lg"></i>
+                    </div>
+                    <span class="text-2xl font-bold" style="color: #1a3c34;">Insta<span class="text-[#2a7d5f]">Lawn</span> Quote</span>
+                </div>
+                <nav class="hidden md:flex items-center space-x-10">
+                    <a href="#features" class="font-medium text-gray-700 hover:text-[#2a7d5f] transition">Features</a>
+                    <a href="#how" class="font-medium text-gray-700 hover:text-[#2a7d5f] transition">How It Works</a>
+                    <a href="#addons" class="font-medium text-gray-700 hover:text-[#2a7d5f] transition">Add‑Ons</a>
+                    <a href="#pricing" class="font-medium text-gray-700 hover:text-[#2a7d5f] transition">Pricing</a>
+                </nav>
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="hidden md:inline font-medium text-gray-700 hover:text-[#2a7d5f] transition">Log In</a>
+                    <a href="#cta" class="px-6 py-3 bg-[#2a7d5f] text-white font-semibold rounded-xl hover:bg-[#1a5d46] transition duration-300 shadow-lg hover:shadow-xl">Get a Demo</a>
+                    <button id="mobileMenuBtn" class="md:hidden text-gray-700 text-2xl">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+            <div id="mobileMenu" class="hidden md:hidden mt-4 pb-4 space-y-4">
+                <a href="#features" class="block font-medium text-gray-700 hover:text-[#2a7d5f] transition">Features</a>
+                <a href="#how" class="block font-medium text-gray-700 hover:text-[#2a7d5f] transition">How It Works</a>
+                <a href="#addons" class="block font-medium text-gray-700 hover:text-[#2a7d5f] transition">Add‑Ons</a>
+                <a href="#pricing" class="block font-medium text-gray-700 hover:text-[#2a7d5f] transition">Pricing</a>
+                <a href="#" class="block font-medium text-gray-700 hover:text-[#2a7d5f] transition">Log In</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg hero-gradient overflow-hidden">
+        <div class="container mx-auto px-6 py-20 md:py-32">
+            <div class="flex flex-col lg:flex-row items-center justify-between">
+                <div class="lg:w-1/2 mb-16 lg:mb-0">
+                    <div class="inline-flex items-center space-x-2 bg-white/80 px-4 py-2 rounded-full text-sm font-semibold text-[#2a7d5f] mb-6 card-shadow">
+                        <span class="pulse-animation w-2 h-2 bg-[#2a7d5f] rounded-full"></span>
+                        <span>Powered by Computer Vision & Satellite AI</span>
+                    </div>
+                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
+                        Accurate Desert Landscape Estimates in
+                        <span class="text-[#2a7d5f]">Minutes,</span> Not Days.
+                    </h1>
+                    <p class="text-xl text-gray-700 mb-10 max-w-2xl">
+                        For landscaping companies in Greater Phoenix. Our AI analyzes satellite & aerial imagery to deliver line‑item precise estimates and professional proposals for desert landscapes—automatically.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
+                        <a href="demo.html" class="px-8 py-4 cta-gradient text-white font-bold rounded-xl text-lg hover:shadow-2xl transition duration-300 text-center shadow-lg">
+                            <i class="fas fa-play-circle mr-2"></i> Watch Demo
+                        </a>
+                        <a href="#pricing" class="px-8 py-4 bg-white text-[#2a7d5f] border-2 border-[#2a7d5f] font-bold rounded-xl text-lg hover:bg-gray-50 transition duration-300 text-center card-shadow">
+                            View Pricing
+                        </a>
+                    </div>
+                    <div class="mt-12 flex flex-wrap items-center gap-8">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center card-shadow mr-4">
+                                <i class="fas fa-bolt text-[#2a7d5f] text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold stat-number">90% Faster</h3>
+                                <p class="text-gray-600">Estimate creation</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center card-shadow mr-4">
+                                <i class="fas fa-chart-line text-[#2a7d5f] text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold stat-number">99% Accurate</h3>
+                                <p class="text-gray-600">Square‑footage detection</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 flex justify-center">
+                    <div class="relative w-full max-w-2xl hero-quote-float">
+                        <img src="assets/front-quote.jpeg" alt="Insta Lawn Quote Example" class="w-full rounded-2xl card-shadow">
+                        <div class="absolute -bottom-6 -left-6 w-64 h-64 bg-gradient-to-r from-[#e6f7f0] to-[#f5f3e7] rounded-2xl -z-10"></div>
+                        <div class="absolute -top-6 -right-6 w-64 h-64 bg-gradient-to-r from-[#e6f0f7] to-[#e6f7f0] rounded-2xl -z-10"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16 slide-in">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Built for Desert Landscaping Precision</h2>
+                <p class="text-xl text-gray-600">Leverage cutting‑edge AI and satellite data to transform how you quote and win projects in Phoenix's unique climate.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <div class="card-shadow-hover card-shadow bg-white rounded-2xl p-8 slide-in">
+                    <div class="w-16 h-16 rounded-2xl feature-icon-bg flex items-center justify-center mb-6">
+                        <i class="fas fa-satellite text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">AI‑Powered Satellite Analysis</h3>
+                    <p class="text-gray-600 mb-4">Our computer vision model processes high‑resolution satellite & aerial imagery of Greater Phoenix to measure turf, gravel, pavers, and desert flora with pixel‑perfect accuracy.</p>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-[#2a7d5f] mr-3"></i> Automated square‑footage detection</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-[#2a7d5f] mr-3"></i> Material & plant type identification</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-[#2a7d5f] mr-3"></i> Topography & slope analysis</li>
+                    </ul>
+                </div>
+                <div class="card-shadow-hover card-shadow bg-white rounded-2xl p-8 slide-in">
+                    <div class="w-16 h-16 rounded-2xl feature-icon-bg flex items-center justify-center mb-6">
+                        <i class="fas fa-file-invoice-dollar text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Auto‑Generated Professional Proposals</h3>
+                    <p class="text-gray-600 mb-4">Turn AI measurements into client‑ready proposals with detailed line‑item breakdowns, labor costs, material estimates, and optional add‑ons—formatted in your brand.</p>
+                    <div class="inline-flex items-center mt-4 px-4 py-2 proposal-badge rounded-full text-white text-sm font-bold">
+                        <i class="fas fa-rocket mr-2"></i> Export to PDF, Word, or CRM
+                    </div>
+                </div>
+                <div class="card-shadow-hover card-shadow bg-white rounded-2xl p-8 slide-in">
+                    <div class="w-16 h-16 rounded-2xl feature-icon-bg flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="w-8 h-8" fill="white"><path d="M21.57 27.75A12.9 12.9 0 0 1 16 29C8.832 29 3 23.168 3 16c0-3.075 1.057-5.979 3-8.308V10h2V4H2v2h2.842A14.86 14.86 0 0 0 1 16c0 8.271 6.729 15 15 15a14.9 14.9 0 0 0 6.43-1.444z"/><path d="M21 9c-3.16 0-5.751 2.457-5.978 5.56A5.97 5.97 0 0 0 11 13H7v4c0 3.309 2.692 6 6 6h2v4h2v-8h2c3.308 0 6-2.691 6-6V9zm-8 12c-2.206 0-4-1.794-4-4v-2h2c2.206 0 4 1.794 4 4v.586l-2.293-2.293l-1.414 1.414L13.586 21zm10-8c0 2.206-1.794 4-4 4h-.586l2.293-2.293l-1.414-1.414L17 15.586V15c0-2.206 1.794-4 4-4h2z"/><path d="M31 16c0-8.271-6.729-15-15-15a14.9 14.9 0 0 0-6.43 1.444l.86 1.806A12.9 12.9 0 0 1 16 3c7.168 0 13 5.832 13 13c0 3.075-1.057 5.979-3 8.308V22h-2v6h6v-2h-2.842A14.86 14.86 0 0 0 31 16"/></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Desert‑Landscape Specialized</h3>
+                    <p class="text-gray-600 mb-4">Calibrated for Phoenix's unique xeriscapes: recognizes palo verde, saguaro, agave, gravel types, drip irrigation lines, and desert‑turf blends with regional pricing data.</p>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-center"><i class="fas fa-map-pin text-[#2a7d5f] mr-3"></i> Phoenix‑metro ZIP code pricing</li>
+                        <li class="flex items-center"><i class="fas fa-temperature-high text-[#2a7d5f] mr-3"></i> Seasonal adjustment factors</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how" class="py-20 gradient-bg">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16 slide-in">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">How Insta Lawn Quote Works</h2>
+                <p class="text-xl text-gray-600">From satellite to proposal in four simple steps. No manual measuring, no guesswork.</p>
+            </div>
+            <div class="flex flex-col lg:flex-row lg:space-x-8 items-center justify-between">
+                <div class="lg:w-1/2 mb-12 lg:mb-0">
+                    <div class="relative">
+                        <div class="space-y-8">
+                            <div class="flex items-start slide-in">
+                                <div class="flex-shrink-0 w-14 h-14 rounded-full bg-white flex items-center justify-center text-2xl font-bold text-[#2a7d5f] card-shadow mr-6">1</div>
+                                <div>
+                                    <h3 class="text-2xl font-bold mb-2">Enter Property Address</h3>
+                                    <p class="text-gray-700">Simply input the Phoenix‑area address. Our system pulls the latest satellite & aerial imagery automatically.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start slide-in">
+                                <div class="flex-shrink-0 w-14 h-14 rounded-full bg-white flex items-center justify-center text-2xl font-bold text-[#2a7d5f] card-shadow mr-6">2</div>
+                                <div>
+                                    <h3 class="text-2xl font-bold mb-2">AI Analyzes & Measures</h3>
+                                    <p class="text-gray-700">Computer vision detects landscape zones, calculates square footage, identifies materials, and flags unique features.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start slide-in">
+                                <div class="flex-shrink-0 w-14 h-14 rounded-full bg-white flex items-center justify-center text-2xl font-bold text-[#2a7d5f] card-shadow mr-6">3</div>
+                                <div>
+                                    <h3 class="text-2xl font-bold mb-2">Customize with Add‑Ons</h3>
+                                    <p class="text-gray-700">Add tree trimming, bush shaping, irrigation repair, lighting, or other services with our pre‑priced desert‑landscape modules.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start slide-in">
+                                <div class="flex-shrink-0 w-14 h-14 rounded-full bg-white flex items-center justify-center text-2xl font-bold text-[#2a7d5f] card-shadow mr-6">4</div>
+                                <div>
+                                    <h3 class="text-2xl font-bold mb-2">Generate & Send Proposal</h3>
+                                    <p class="text-gray-700">One‑click generation of a professional, line‑item proposal. Send directly to the client or export to your CRM.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 flex justify-center">
+                    <div class="relative w-full max-w-md">
+                        <div class="bg-white rounded-2xl card-shadow p-6 md:p-8">
+                            <div class="mb-5">
+                                <div class="flex items-center gap-2.5 mb-1.5">
+                                    <div class="w-8 h-8 rounded-lg feature-icon-bg flex items-center justify-center">
+                                        <i class="fas fa-leaf text-white text-sm"></i>
+                                    </div>
+                                    <span class="font-bold text-base text-[#1a3c34]" style="font-family:'Manrope',sans-serif;">InstaLawn Quote</span>
+                                </div>
+                                <p class="text-[10px] text-gray-400 uppercase tracking-wider font-semibold">Estimate Summary</p>
+                                <p class="text-sm text-gray-500 mt-1">8421 E Desert View Dr, Scottsdale, AZ</p>
+                            </div>
+                            <div class="space-y-3 text-sm border-t border-gray-100 pt-4">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <p class="font-semibold text-[#1a3c34]">Site Preparation</p>
+                                        <p class="text-xs text-gray-400">1,870 sq ft</p>
+                                    </div>
+                                    <span class="font-bold text-[#1a3c34]">$2,805</span>
+                                </div>
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <p class="font-semibold text-[#1a3c34]">Decomposed Granite</p>
+                                        <p class="text-xs text-gray-400">18 tons delivered</p>
+                                    </div>
+                                    <span class="font-bold text-[#1a3c34]">$2,880</span>
+                                </div>
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <p class="font-semibold text-[#1a3c34]">Desert Trees</p>
+                                        <p class="text-xs text-gray-400">4 installed</p>
+                                    </div>
+                                    <span class="font-bold text-[#1a3c34]">$2,400</span>
+                                </div>
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <p class="font-semibold text-[#1a3c34]">Drip Irrigation</p>
+                                        <p class="text-xs text-gray-400">Full system</p>
+                                    </div>
+                                    <span class="font-bold text-[#1a3c34]">$2,200</span>
+                                </div>
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <p class="font-semibold text-[#1a3c34]">Accent Plants & Cacti</p>
+                                        <p class="text-xs text-gray-400">15 specimens</p>
+                                    </div>
+                                    <span class="font-bold text-[#1a3c34]">$780</span>
+                                </div>
+                            </div>
+                            <div class="mt-5 pt-4 border-t border-gray-200 space-y-2 text-sm">
+                                <div class="flex justify-between text-gray-500">
+                                    <span>Subtotal</span>
+                                    <span>$11,065</span>
+                                </div>
+                                <div class="flex justify-between text-[#2a7d5f] font-medium">
+                                    <span><i class="fas fa-tag text-[10px] mr-1"></i>Scottsdale Rebate</span>
+                                    <span>-$2,400</span>
+                                </div>
+                                <div class="flex justify-between text-gray-500">
+                                    <span>Estimated Tax</span>
+                                    <span>$528</span>
+                                </div>
+                                <div class="flex justify-between items-center pt-3 border-t border-gray-200 mt-2">
+                                    <span class="font-bold text-lg text-[#1a3c34]">Net Cost</span>
+                                    <span class="font-bold text-2xl text-[#2a7d5f]">$9,193</span>
+                                </div>
+                            </div>
+                            <div class="mt-5 space-y-3">
+                                <div class="flex items-center gap-2 text-xs text-gray-400">
+                                    <span class="w-2 h-2 bg-amber-400 rounded-full inline-block flex-shrink-0"></span>
+                                    Satellite imagery &middot; Medium confidence &middot; Scottsdale 1.2x regional rate
+                                </div>
+                                <button class="w-full py-3 cta-gradient text-white font-bold rounded-xl text-sm hover:shadow-xl transition duration-300">
+                                    Send Proposal
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add‑Ons Section -->
+    <section id="addons" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16 slide-in">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Desert‑Specific Add‑Ons</h2>
+                <p class="text-xl text-gray-600">Boost your estimates with popular Phoenix‑area services. Pre‑priced, one‑click addition.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="addon-card card-shadow bg-white rounded-xl p-6 hover:card-shadow-hover border border-gray-100">
+                    <div class="w-12 h-12 rounded-lg feature-icon-bg flex items-center justify-center mb-4">
+                        <i class="fas fa-tree text-white text-xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2">Desert Tree Trimming</h4>
+                    <p class="text-gray-600 text-sm mb-4">Palo verde, mesquite, acacia. Safety trim, canopy shaping, deadwood removal.</p>
+                    <div class="text-2xl font-bold text-[#1a3c34]">From $200/tree</div>
+                </div>
+                <div class="addon-card card-shadow bg-white rounded-xl p-6 hover:card-shadow-hover border border-gray-100">
+                    <div class="w-12 h-12 rounded-lg feature-icon-bg flex items-center justify-center mb-4">
+                        <i class="fas fa-tint text-white text-xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2">Drip Irrigation Repair</h4>
+                    <p class="text-gray-600 text-sm mb-4">Zone‑based leak detection, valve replacement, emitter adjustment for xeriscapes.</p>
+                    <div class="text-2xl font-bold text-[#1a3c34]">From $150/zone</div>
+                </div>
+                <div class="addon-card card-shadow bg-white rounded-xl p-6 hover:card-shadow-hover border border-gray-100">
+                    <div class="w-12 h-12 rounded-lg feature-icon-bg flex items-center justify-center mb-4">
+                        <i class="fas fa-sun text-white text-xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2">Solar‑Powered Landscape Lighting</h4>
+                    <p class="text-gray-600 text-sm mb-4">Pathway, accent, and security lighting for desert homes. No wiring needed.</p>
+                    <div class="text-2xl font-bold text-[#1a3c34]">From $85/fixture</div>
+                </div>
+                <div class="addon-card card-shadow bg-white rounded-xl p-6 hover:card-shadow-hover border border-gray-100">
+                    <div class="w-12 h-12 rounded-lg feature-icon-bg flex items-center justify-center mb-4">
+                        <i class="fas fa-shield-alt text-white text-xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2">Desert‑Landscape Maintenance</h4>
+                    <p class="text-gray-600 text-sm mb-4">Monthly weeding, debris removal, plant health checks, and irrigation inspection.</p>
+                    <div class="text-2xl font-bold text-[#1a3c34]">From $400/month</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="py-20 gradient-bg">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16 slide-in">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Simple, Transparent Pricing</h2>
+                <p class="text-xl text-gray-600">Pay per estimate. No long‑term contracts. Unlimited team members.</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div class="card-shadow bg-white rounded-2xl p-8 border border-gray-100">
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-bold mb-2">Starter</h3>
+                        <p class="text-gray-600">For smaller landscaping companies</p>
+                        <div class="mt-6 flex items-baseline">
+                            <span class="text-5xl font-bold stat-number">$99</span>
+                            <span class="text-gray-500 ml-2">/month</span>
+                        </div>
+                        <p class="text-gray-600 mt-2">+ $4 per AI‑generated estimate</p>
+                    </div>
+                    <ul class="space-y-4 mb-10">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-[#2a7d5f] mr-3"></i> <span class="font-medium">25 estimates/month</span></li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-[#2a7d5f] mr-3"></i> Basic satellite analysis</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-[#2a7d5f] mr-3"></i> Standard proposal templates</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-[#2a7d5f] mr-3"></i> Email support</li>
+                    </ul>
+                    <a href="#cta" class="block w-full py-4 text-center border-2 border-[#2a7d5f] text-[#2a7d5f] font-bold rounded-xl hover:bg-[#2a7d5f] hover:text-white transition duration-300">Get a Demo</a>
+                </div>
+                <div class="card-shadow bg-white rounded-2xl p-8 border-2 border-[#2a7d5f] relative scale-105">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <span class="px-6 py-2 bg-[#2a7d5f] text-white font-bold rounded-full text-sm">Most Popular</span>
+                    </div>
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-bold mb-2">Professional</h3>
+                        <p class="text-gray-600">For growing landscaping businesses</p>
+                        <div class="mt-6 flex items-baseline">
+                            <span class="text-5xl font-bold stat-number">$149</span>
+                            <span class="text-gray-500 ml-2">/month</span>
+                        </div>
+                        <p class="text-gray-600 mt-2">+ $3 per AI‑generated estimate</p>
+                    </div>
+                    <ul class="space-y-4 mb-10">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-[#2a7d5f] mr-3"></i> <span class="font-medium">100 estimates/month</span></li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-[#2a7d5f] mr-3"></i> Advanced AI analysis</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-[#2a7d5f] mr-3"></i> Custom branded proposals</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-[#2a7d5f] mr-3"></i> CRM integrations</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-[#2a7d5f] mr-3"></i> Priority phone & email support</li>
+                    </ul>
+                    <a href="#cta" class="block w-full py-4 text-center cta-gradient text-white font-bold rounded-xl hover:shadow-2xl transition duration-300">Get a Demo</a>
+                </div>
+                <div class="card-shadow bg-white rounded-2xl p-8 border border-gray-100">
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-bold mb-2">Enterprise</h3>
+                        <p class="text-gray-600">For large landscaping corporations</p>
+                        <div class="mt-6 flex items-baseline">
+                            <span class="text-5xl font-bold stat-number">$199</span>
+                            <span class="text-gray-500 ml-2">/month</span>
+                        </div>
+                        <p class="text-gray-600 mt-2">+ $2 per AI‑generated estimate</p>
+                    </div>
+                    <ul class="space-y-4 mb-10">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-[#2a7d5f] mr-3"></i> <span class="font-medium">Unlimited estimates</span></li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-[#2a7d5f] mr-3"></i> Premium AI & drone imagery analysis</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-[#2a7d5f] mr-3"></i> API access & custom integrations</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-[#2a7d5f] mr-3"></i> Dedicated account manager</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-[#2a7d5f] mr-3"></i> On‑boarding & training</li>
+                    </ul>
+                    <a href="#cta" class="block w-full py-4 text-center border-2 border-[#2a7d5f] text-[#2a7d5f] font-bold rounded-xl hover:bg-[#2a7d5f] hover:text-white transition duration-300">Get a Demo</a>
+                </div>
+            </div>
+            <p class="text-center text-gray-600 mt-12">All plans include a <span class="font-bold text-[#2a7d5f]">personalized demo</span> with 10 complimentary AI estimates.</p>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="cta" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto card-shadow rounded-3xl overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/2 cta-gradient p-10 md:p-14 text-white">
+                        <h2 class="text-4xl font-bold mb-6">Ready to Transform Your Estimating Process?</h2>
+                        <p class="text-xl mb-8 opacity-95">Join over 200 landscaping companies in Greater Phoenix using Insta Lawn Quote to win more bids with confidence.</p>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-white text-2xl mr-4"></i>
+                                <span class="text-lg">No credit card required</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-white text-2xl mr-4"></i>
+                                <span class="text-lg">On‑boarding in under 15 minutes</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-white text-2xl mr-4"></i>
+                                <span class="text-lg">Phone, email, and chat support</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 bg-white p-10 md:p-14">
+                        <h3 class="text-3xl font-bold mb-8 text-[#1a3c34]">Request a Demo</h3>
+                        <form id="trialForm" class="space-y-6">
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-2">Full Name</label>
+                                <input type="text" class="w-full px-5 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#2a7d5f] focus:border-transparent outline-none transition" placeholder="John Smith" required>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-2">Company Name</label>
+                                <input type="text" class="w-full px-5 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#2a7d5f] focus:border-transparent outline-none transition" placeholder="Desert Landscaping Pros" required>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-2">Email Address</label>
+                                <input type="email" class="w-full px-5 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#2a7d5f] focus:border-transparent outline-none transition" placeholder="john@company.com" required>
+                            </div>
+                            <button type="submit" class="w-full py-4 cta-gradient text-white font-bold rounded-xl text-lg hover:shadow-2xl transition duration-300">
+                                <i class="fas fa-rocket mr-2"></i> Request a Demo
+                            </button>
+                        </form>
+                        <p class="text-gray-500 text-sm mt-6 text-center">By signing up, you agree to our <a href="#" class="text-[#2a7d5f] font-medium">Terms of Service</a> and <a href="#" class="text-[#2a7d5f] font-medium">Privacy Policy</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#1a3c34] text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-8 md:mb-0">
+                    <div class="flex items-center space-x-2 mb-6">
+                        <div class="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center">
+                            <i class="fas fa-leaf text-white text-lg"></i>
+                        </div>
+                        <span class="text-2xl font-bold">Insta<span class="text-[#4aa37c]">Lawn</span> Quote</span>
+                    </div>
+                    <p class="text-gray-300 max-w-md">Precision AI‑powered landscaping estimates for the Greater Phoenix metropolitan area. Transforming desert‑landscape businesses with satellite intelligence.</p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-10">
+                    <div>
+                        <h4 class="text-lg font-bold mb-4">Product</h4>
+                        <ul class="space-y-3 text-gray-300">
+                            <li><a href="#features" class="hover:text-white transition">Features</a></li>
+                            <li><a href="#how" class="hover:text-white transition">How It Works</a></li>
+                            <li><a href="#addons" class="hover:text-white transition">Add‑Ons</a></li>
+                            <li><a href="#pricing" class="hover:text-white transition">Pricing</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold mb-4">Company</h4>
+                        <ul class="space-y-3 text-gray-300">
+                            <li><a href="#" class="hover:text-white transition">About Us</a></li>
+                            <li><a href="#" class="hover:text-white transition">Blog</a></li>
+                            <li><a href="#" class="hover:text-white transition">Careers</a></li>
+                            <li><a href="#" class="hover:text-white transition">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold mb-4">Connect</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400 text-sm">
+                <p>&copy; 2026 Insta Lawn Quote, Inc. All rights reserved. | Phoenix, Arizona</p>
+                <p class="mt-2">Satellite imagery powered by leading providers. AI models trained specifically on Sonoran Desert landscapes.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenuBtn.innerHTML = mobileMenu.classList.contains('hidden') ? '<i class="fas fa-bars"></i>' : '<i class="fas fa-times"></i>';
+        });
+
+        // Scroll animation
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        document.querySelectorAll('.slide-in').forEach(el => observer.observe(el));
+
+        // Form submission
+        document.getElementById('trialForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Processing...';
+            submitBtn.disabled = true;
+            // Simulate API call
+            setTimeout(() => {
+                alert('Thank you! Your demo request has been received. We\'ll be in touch shortly.');
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+                this.reset();
+            }, 1500);
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href === '#') return;
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

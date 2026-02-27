@@ -1,0 +1,23 @@
+{
+  "name": "insta-lawn-quote",
+  "version": "1.0.0",
+  "description": "InstaLawn Quote — AI-powered desert landscape estimates",
+  "scripts": {
+    "dev": "tsx server.ts",
+    "start": "tsx server.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google/genai": "^1.41.0",
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.2.3",
+    "@types/sharp": "^0.31.1",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "sharp": "^0.34.5",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
+}
